@@ -4,7 +4,7 @@ html {
     height: 100%;
 }
 
-.background-img {
+.background-img,a {
     height: 100%;
     background: url(https://images.unsplash.com/photo-1486728297118-82a07bc48a28);
     background-position: center;
