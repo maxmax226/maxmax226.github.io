@@ -13,7 +13,7 @@ const PADDE_THICKNESS = 10;
 const PADDLE_DIST_FROM_EDGE = 60;
 var paddleX = 400;
 var mouseX, mouseY;
-//const BOUNCE_SOUND = new Audio('bounce.mp3');
+const BOUNCE_SOUND = new Audio('bounce.mp3');
 
 
 function updateMousePos(event) {
