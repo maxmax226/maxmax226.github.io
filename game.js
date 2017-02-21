@@ -61,23 +61,23 @@ function moveAll() {
   }
 
   if (ballY > canvas.height) {
-    ballReset();
+    ballSpeedY *= -1;
   }
 
-  var paddleTopEdgeY = canvas.height - PADDLE_DIST_FROM_EDGE;
-  var paddleBottomEdgeY = paddleTopEdgeY + PADDE_THICKNESS / 2;
-  var paddleLeftEdgeX = paddleX;
-  var paddleRightEdgeX = paddleLeftEdgeX + PADDLE_WIDTH;
-  if (ballY > paddleTopEdgeY &&
-    ballY <= paddleBottomEdgeY &&
-    ballX > paddleLeftEdgeX &&
-    ballX < paddleRightEdgeX) {
-    ballSpeedY *= -1;
-    BOUNCE_SOUND.play();
-    var centerOfPaddleX = paddleX + PADDLE_WIDTH / 2;
-    var ballDistFromPaddleCenterX = ballX - centerOfPaddleX;
-    ballSpeedX = ballDistFromPaddleCenterX * 0.2;
-  }
+  // var paddleTopEdgeY = canvas.height - PADDLE_DIST_FROM_EDGE;
+  // var paddleBottomEdgeY = paddleTopEdgeY + PADDE_THICKNESS / 2;
+  // var paddleLeftEdgeX = paddleX;
+  // var paddleRightEdgeX = paddleLeftEdgeX + PADDLE_WIDTH;
+  // if (ballY > paddleTopEdgeY &&
+  //   ballY <= paddleBottomEdgeY &&
+  //   ballX > paddleLeftEdgeX &&
+  //   ballX < paddleRightEdgeX) {
+  //   ballSpeedY *= -1;
+  //   BOUNCE_SOUND.play();
+  //   var centerOfPaddleX = paddleX + PADDLE_WIDTH / 2;
+  //   var ballDistFromPaddleCenterX = ballX - centerOfPaddleX;
+  //   ballSpeedX = ballDistFromPaddleCenterX * 0.2;
+  // }
 }
 
 function drawAll() {
@@ -86,6 +86,12 @@ function drawAll() {
 
   //draw the ball
   colorCircle(ballX, ballY, 10, 'white');
+
+
+  colorCircle(ballX*2, ballY*2, 10, 'white');
+
+
+  colorCircle(ballX*3, ballY*3, 10, 'white');
 
   //draw the paddleX
   colorRect(paddleX, canvas.height - PADDLE_DIST_FROM_EDGE, PADDLE_WIDTH, PADDE_THICKNESS);
