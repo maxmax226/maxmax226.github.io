@@ -1,0 +1,38 @@
+.vertical-line{
+    height:1000px;
+    width:10px;
+    background: #9c9e9f ;
+    margin-left:22px;
+}
+
+.big-circle-wrapper{
+    padding:6px;
+    background:#9c9e9f;
+    border-radius: 50%;
+    position: relative;
+}
+
+.big-circle{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    background:white;
+}
+
+
+.vertial-line.ten-percent{
+    background:linear-gradient(180deg,  #38B449  0%,#38B449 50%,#9c9e9f 50%,#9c9e9f 100%) !important;
+}
+
+
+.small-circle{
+    width:20px;
+    height:20px;
+    background: #9c9e9f;
+    border-radius: 50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin: -10px 0 0 -10px;
+}
+
