@@ -7,27 +7,66 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-            <link rel="stylesheet" href='style.css'>
-            <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
-        <script src="countdown.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+                <link rel="stylesheet" href='style.css'>
+                <link rel="stylesheet" href='timeline.css'>
+                <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
+                <script src="countdown.js"></script>
 </head>
 
 <body>
     <div class='background-img'>
         <div class="middle">
-            <p id="coming-soon">COMING SOON</p>
+            <!--<p id="coming-soon">COMING SOON</p>
             <hr>
             <p id="countdown"></p>
-            <a href="game.html">Ping pong</a>
+            <a href="game.html">Ping pong</a>-->
+            <div class="timeline">
+                <div class="vertical-line">
+                </div>
+                <div class="big-circle-wrapper circle">
+                    <div class="big-circle ">
+                        <div class="small-circle circle"></div>
+                    </div>
+                </div>
+                <div class="vertical-line"></div>
+            </div>
         </div>
     </div>
-    
-
     <script>
-        displayCountDown(document.getElementById("countdown"));
+        //displayCountDown(document.getElementById("countdown"));
+        var $window = $(window);
+        var $vertical_lines = $('.vertical-line');
+        var $circles = $('.circle');
+
+
+        $(document).ready(function () {
+            $window.on("scroll", function () {
+                var change_point = $window.scrollTop() + 700;
+                $vertical_lines.each(function (index) {
+                    var vertical_line = $($vertical_lines[index])
+                    var vertical_top = vertical_line.offset().top;
+                    var ratio = Math.round(((change_point - vertical_top) / vertical_line.height() *
+                        100) * 100) / 100;
+                    vertical_line.css("background",
+                        "linear-gradient(180deg,  #ff6f00  0%,#ff6f00 " + ratio +
+                        "%,#9c9e9f " + ratio + "%,#9c9e9f 100%)");
+                });
+                $circles.each(function (index) {
+                    var circle = $($circles[index]);
+                    var circle_top = circle.offset().top;
+                    var ratio = Math.round(((change_point - circle_top) / circle.height() *
+                        100) * 100) / 100;
+                    circle.css("background",
+                        "linear-gradient(180deg,  #ff6f00 0%,#ff6f00 " + ratio +
+                        "%,#9c9e9f " + ratio + "%,#9c9e9f 100%)");
+                })
+            })
+        })
     </script>
 </body>
 
