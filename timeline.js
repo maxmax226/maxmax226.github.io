@@ -13,15 +13,23 @@ function changeColor(element, ratio, from_color, to_color) {
 }
 
 function setUpColorChangeTimeline($window, SCREEN_RATIO, css_class, from_color, to_color) {
-    $window.on("scroll", function() {
+    $window.on("scroll", function () {
+        var $window_scroll_top = $window.scrollTop();
+        var $window_height = $window.height();
+        var $document_height = $(document).height();
 
-        css_class.each(function(index) {
-            var change_point = $window.scrollTop() + $window.height() * SCREEN_RATIO;
+        css_class.each(function (index) {
             var timeline = $(css_class[index])
             var timeline_top = timeline.offset().top;
-            var ratio = Math.round(((change_point - timeline_top) / timeline.height() *
-                100) * 100) / 100;
-            changeColor(timeline, ratio, from_color, to_color);
+            if ($window_scroll_top + $window_height === $document_height) {
+                changeColor(timeline, 100, from_color, to_color);
+            } else {
+                var change_point = $window_scroll_top + $window_height * SCREEN_RATIO;
+
+                var ratio = Math.round(((change_point - timeline_top) / timeline.height() *
+                    100) * 100) / 100;
+                changeColor(timeline, ratio, from_color, to_color);
+            }
         });
     })
 }
