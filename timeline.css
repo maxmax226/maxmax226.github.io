@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .vertical-line{
     height:1000px;
     width:10px;
@@ -8,10 +9,23 @@
 .big-circle-wrapper{
     padding:6px;
     background:#9c9e9f;
+=======
+.vertical-line {
+    height: 1000px;
+    width: 10px;
+    background: #9c9e9f;
+    margin-left: 33px;
+}
+
+.big-circle-wrapper {
+    padding: 6px;
+    background: #9c9e9f;
+>>>>>>> ffd97c21b2e180bad5cf1fe69acfbbd06ec773c7
     border-radius: 50%;
     position: relative;
 }
 
+<<<<<<< HEAD
 .big-circle{
     width:40px;
     height:40px;
@@ -36,3 +50,50 @@
     margin: -10px 0 0 -10px;
 }
 
+=======
+.big-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+}
+
+.small-circle {
+    width: 20px;
+    height: 20px;
+    background: #9c9e9f;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+}
+
+.fa {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inner-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+}
+
+.photo {
+    border-radius: 50%;
+    border: black solid 1px;
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
+.photo img {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -75px;
+}
+>>>>>>> ffd97c21b2e180bad5cf1fe69acfbbd06ec773c7
