@@ -3,9 +3,14 @@ var $window = $(window);
 
 function changeColor(element, ratio, from_color, to_color) {
     //if the element is icon need to change -background-clip to show gradient
-    element.css("background",
-        "linear-gradient(180deg,  " + to_color + "  0%," + to_color + " " + ratio +
-        "%," + from_color + " " + ratio + "%," + from_color + " 100%)");
+    // element.css("background",
+    //     "linear-gradient(180deg,  " + to_color + "  0%," + to_color + " " + ratio +
+    //     "%," + from_color + " " + ratio + "%," + from_color + " 100%)");
+
+          element.css("background",
+        "linear-gradient(180deg,  " + "#A6CE38"+ "  0%," + "#38B449" + " " +ratio +
+        "%, " + from_color + " " + ratio + "%," + from_color + " 100%)");  
+
     if (element.is("i")) {
         element.css("-webkit-background-clip", "text");
         element.css(" -webkit-text-fill-color", "transparent");
